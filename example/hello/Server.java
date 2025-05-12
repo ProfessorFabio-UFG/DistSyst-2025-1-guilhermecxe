@@ -50,6 +50,19 @@ public class Server implements Hello {
         return "Hello, world!";
     }
 
+    public int sum(int a, int b){
+	return a + b;
+    }
+
+    public String expose_server(){
+	String details = "";
+        details = details + "Usuário: " + System.getProperty("user.name");
+        details = details + "\nSO: " + System.getProperty("os.name");
+	details = details + "\nArquitetura: " + System.getProperty("os.arch");
+	details = details + "\nJava Version: " + System.getProperty("java.version");
+	return details;
+    }
+
     public static void main(String args[]) {
 
         try {
@@ -58,7 +71,7 @@ public class Server implements Hello {
 
             // Bind the remote object's stub in the registry
             Registry registry = LocateRegistry.getRegistry();
-            registry.bind("Hello", stub);
+            registry.rebind("Hello", stub);
 
             System.err.println("Server ready");
         } catch (Exception e) {

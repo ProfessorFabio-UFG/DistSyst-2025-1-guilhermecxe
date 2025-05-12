@@ -56,6 +56,12 @@ public class Client {
             System.out.println("Found server");
             String response = stub.sayHello();
             System.out.println("response: " + response);
+
+	    int sum_response = stub.sum(5, 6);
+	    System.out.println("sum response: " + sum_response);
+
+	    System.out.println("Server details:\n");
+	    System.out.println(stub.expose_server());
         } catch (Exception e) {
             System.err.println("Client exception: " + e.toString());
             e.printStackTrace();

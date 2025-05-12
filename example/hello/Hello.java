@@ -42,4 +42,6 @@ import java.rmi.RemoteException;
 
 public interface Hello extends Remote {
     String sayHello() throws RemoteException;
+    int sum(int a, int b) throws RemoteException;
+    String expose_server() throws RemoteException;
 }
