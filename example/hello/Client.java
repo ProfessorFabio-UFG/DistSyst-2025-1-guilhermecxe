@@ -60,7 +60,7 @@ public class Client {
 	    int sum_response = stub.sum(5, 6);
 	    System.out.println("sum response: " + sum_response);
 
-	    System.out.println("Server details:\n");
+	    System.out.println("\nServer details:");
 	    System.out.println(stub.expose_server());
         } catch (Exception e) {
             System.err.println("Client exception: " + e.toString());
